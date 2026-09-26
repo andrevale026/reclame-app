@@ -1,0 +1,685 @@
+:root {
+    --bg: #07050c;
+    --panel: #121020;
+    --panel-2: #18142c;
+    --purple: #7618ff;
+    --purple-2: #b04cff;
+    --green: #9dff00;
+    --green-2: #4cff00;
+    --text: #f8f6ff;
+    --muted: #b7b2c9;
+    --border: rgba(171, 91, 255, .32);
+    --shadow: 0 20px 60px rgba(70, 0, 130, .35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 75% 15%,
+            rgba(125, 25, 255, .28),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(90, 255, 0, .08),
+            transparent 28%
+        ),
+        var(--bg);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* ========================================
+   BARRA SUPERIOR
+======================================== */
+
+.topbar {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    padding: 18px 22px;
+}
+
+.brand-small img {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 18px rgba(125, 25, 255, .55)
+        );
+}
+
+
+/* ========================================
+   ESTRUTURA PRINCIPAL
+======================================== */
+
+.app-shell {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+
+    padding:
+        100px 24px 48px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* ========================================
+   TELA INICIAL
+======================================== */
+
+.hero {
+    width: min(1100px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, 480px) 1fr;
+
+    gap: 56px;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   LOGO PRINCIPAL
+======================================== */
+
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-main {
+    width: min(100%, 480px);
+
+    display: block;
+
+    margin: auto;
+
+    filter:
+        drop-shadow(
+            0 0 30px rgba(121, 29, 255, .35)
+        );
+}
+
+
+/* ========================================
+   DESENVOLVEDORES
+======================================== */
+
+.developers {
+    width: 100%;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: .82rem;
+
+    line-height: 1.6;
+}
+
+.developers span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--green);
+
+    font-size: .72rem;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+.developers strong {
+    display: block;
+
+    color: var(--text);
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   TEXTO DA TELA INICIAL
+======================================== */
+
+.hero-copy {
+    max-width: 620px;
+}
+
+.eyebrow,
+.step {
+    color: var(--green);
+
+    letter-spacing: .14em;
+
+    font-size: .78rem;
+
+    font-weight: 800;
+}
+
+h1 {
+    font-size:
+        clamp(3rem, 7vw, 6.5rem);
+
+    line-height: .95;
+
+    margin:
+        14px 0 24px;
+}
+
+h1 span {
+    color: var(--green);
+}
+
+h2 {
+    font-size:
+        clamp(2rem, 4vw, 3.5rem);
+
+    margin:
+        10px 0;
+}
+
+p {
+    color: var(--muted);
+
+    font-size: 1.08rem;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   OPÇÕES E CATEGORIAS
+======================================== */
+
+.choice-grid,
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin:
+        34px 0;
+}
+
+.choice-card,
+.category-card {
+    color: var(--text);
+
+    text-align: left;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(118, 24, 255, .20),
+            rgba(18, 16, 32, .95)
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+    box-shadow: var(--shadow);
+}
+
+.choice-card:hover,
+.category-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--green);
+}
+
+.choice-card strong,
+.category-card strong {
+    display: block;
+
+    font-size: 1.15rem;
+
+    margin-bottom: 8px;
+}
+
+.choice-card small,
+.category-card small {
+    color: var(--muted);
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   PAINÉIS
+======================================== */
+
+.panel {
+    width: min(900px, 100%);
+
+    background:
+        rgba(18, 16, 32, .92);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 28px;
+
+    padding:
+        clamp(24px, 5vw, 48px);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.panel.narrow {
+    max-width: 700px;
+}
+
+.notice {
+    border-left:
+        4px solid var(--green);
+
+    padding:
+        18px 20px;
+
+    background:
+        rgba(157, 255, 0, .06);
+
+    border-radius:
+        0 14px 14px 0;
+}
+
+
+/* ========================================
+   CABEÇALHOS INTERNOS
+======================================== */
+
+.section-head {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+
+    align-items:
+        flex-start;
+
+    margin-bottom: 24px;
+}
+
+.category-grid {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+.category-card {
+    min-height: 120px;
+}
+
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+.field {
+    margin:
+        18px 0;
+}
+
+.field label,
+.email-box label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    border:
+        1px solid rgba(255, 255, 255, .15);
+
+    border-radius: 13px;
+
+    padding:
+        14px 15px;
+
+    background:
+        #0b0914;
+
+    color:
+        var(--text);
+
+    outline:
+        none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 0 3px rgba(157, 255, 0, .08);
+}
+
+textarea {
+    min-height: 180px;
+
+    resize: vertical;
+}
+
+
+/* ========================================
+   E-MAIL E PRIVACIDADE
+======================================== */
+
+.email-box,
+.privacy {
+    margin-top: 24px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(118, 24, 255, .08);
+
+    border:
+        1px solid rgba(118, 24, 255, .25);
+}
+
+.email-box small {
+    display: block;
+
+    margin-top: 8px;
+
+    color:
+        var(--muted);
+}
+
+.privacy {
+    display: grid;
+
+    gap: 5px;
+}
+
+.privacy span {
+    color:
+        var(--muted);
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   AÇÕES E BOTÕES
+======================================== */
+
+.actions {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+.btn {
+    border: 0;
+
+    border-radius: 13px;
+
+    padding:
+        14px 20px;
+
+    cursor: pointer;
+
+    font-weight: 800;
+}
+
+.btn.primary {
+    color:
+        #0b090f;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--green-2)
+        );
+}
+
+.btn.secondary {
+    color:
+        var(--text);
+
+    background:
+        #211c35;
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+}
+
+.btn.compact {
+    padding:
+        10px 14px;
+}
+
+.submit {
+    width: 100%;
+
+    margin-top: 24px;
+
+    font-size: 1.05rem;
+}
+
+
+/* ========================================
+   RESULTADOS
+======================================== */
+
+.result {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(157, 255, 0, .08);
+
+    border:
+        1px solid rgba(157, 255, 0, .35);
+}
+
+.result strong {
+    color:
+        var(--green);
+}
+
+.result.error {
+    background:
+        rgba(255, 77, 109, .10);
+
+    border-color:
+        rgba(255, 77, 109, .45);
+}
+
+.result.error strong {
+    color:
+        #ff7890;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ========================================
+   ACOMPANHAMENTO
+======================================== */
+
+.tracking-link {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 850px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+
+        text-align: center;
+    }
+
+    .logo-main {
+        width:
+            min(72vw, 330px);
+    }
+
+    .developers {
+        margin-top: 12px;
+
+        font-size: .78rem;
+    }
+
+    .choice-grid,
+    .category-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .hero-copy {
+        margin: auto;
+    }
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 560px) {
+
+    .screen {
+        padding:
+            82px 14px 30px;
+    }
+
+    .topbar {
+        padding:
+            10px 12px;
+    }
+
+    .brand-small img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .logo-main {
+        width:
+            min(68vw, 280px);
+    }
+
+    .developers {
+        margin-top: 10px;
+
+        padding:
+            0 10px;
+
+        font-size: .74rem;
+
+        line-height: 1.55;
+    }
+
+    .developers span {
+        font-size: .67rem;
+    }
+
+    .choice-grid,
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        border-radius: 20px;
+
+        padding:
+            22px 18px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}

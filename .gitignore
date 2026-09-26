@@ -1,0 +1,50 @@
+# Maven / arquivos compilados
+target/
+*.jar
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# IntelliJ / IDEs
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Arquivos temporarios
+*.tmp
+*.temp
+*.bak
+*~
+
+# Variaveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+
+# Chaves e certificados
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+
+# Configuracoes locais com credenciais
+application-local.yml
+application-local.yaml
+application-local.properties
